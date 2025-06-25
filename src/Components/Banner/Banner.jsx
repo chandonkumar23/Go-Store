@@ -1,0 +1,115 @@
+import React, { useState, useEffect } from 'react';
+import {  AnimatePresence } from 'framer-motion';
+import Modal from './Tranding/Modal';
+
+const slides = [
+  {
+    title: 'Best Iphone Collection',
+    price: '$255',
+    desc: 'Lorem ipsum dolor sit amet, consetetursadipscing elitr, sed diam nonumy sit amet, consetetursadipscing elitr.',
+    img: 'https://i.ibb.co/QF5ND9Mv/slider-1-removebg-preview.png',
+  },
+  {
+    title: 'Top Samsung Galaxy Deals',
+    price: '$199',
+    desc: 'Explore our best offers on Samsung devices, perfect for every tech lover out there.',
+    img: 'https://i.ibb.co/DPdz7WKr/banner-deal-removebg-preview.png', // placeholder, replace with actual image
+  },
+  {
+    title: 'Premium Google Pixel Picks',
+    price: '$229',
+    desc: 'Grab the latest Google Pixel phones with smart features and premium build.',
+    img: 'https://i.ibb.co/qVxWLgR/3.png', // placeholder, replace with actual image
+  },
+];
+
+const IphoneCarousel = () => {
+  const [current, setCurrent] = useState(0);
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+
+  // Auto slide every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="bg-[#EAEDEF] relative overflow-hidden py-16 px-6 md:px-20 flex justify-center items-center">
+      <div className="max-w-screen-xl w-full flex flex-col md:flex-row justify-between items-center gap-10">
+        <AnimatePresence mode="wait">
+          {/* Left: Text */}
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
+            className="w-full md:w-1/2"
+          >
+            <div className="inline-block bg-gradient-to-r from-pink-500 to-orange-400 text-white text-sm px-4 py-2 rounded mb-4 font-medium">
+              THIS WEEK ONLY FOR BIG SALE
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight mb-4">
+              {slides[current].title} <br />
+              Starting <span className="text-5xl">{slides[current].price}</span>
+            </h1>
+            <p className="text-gray-500 mb-6">{slides[current].desc}</p>
+
+            <div className="flex items-center gap-4">
+              <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white px-6 py-3 rounded-lg text-sm font-semibold">
+                Shop Now
+              </button>
+              <button className="flex items-center gap-2 text-gray-600 text-sm hover:text-black transition">
+                <div className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center hover:text-pink-500">
+                  <svg onClick={handleOpen} className="w-4 h-4 fill-current " viewBox="0 0 20 20">
+                    <path d="M7 5v10l8-5-8-5z" />
+                  </svg>
+                </div>
+                What's Trending
+              </button>
+            </div>
+
+            <div className="text-gray-600 text-sm mt-8">
+              0{current + 1} / 0{slides.length}
+            </div>
+          </motion.div>
+
+          {/* Right: Image */}
+          <motion.div
+            key={slides[current].img}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.5 }}
+            className="w-full md:w-1/2 flex justify-center items-center min-h-[400px]" // FIXED HEIGHT
+          >
+            <img
+              src={slides[current].img}
+              alt="phone"
+              className="w-[350px] h-[350px] md:w-[420px] md:h-[420px] object-contain transition-transform duration-500"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+      </div>
+
+      {/* Navigation Buttons */}
+      <div className="absolute bottom-10 right-10 flex gap-4 z-10">
+        <button onClick={prevSlide} className="w-14 h-14 bg-white shadow-md rounded-sm flex items-center justify-center">
+          <span className="text-2xl">←</span>
+        </button>
+        <button onClick={nextSlide} className="w-14 h-14 bg-white shadow-md rounded-sm flex items-center justify-center">
+          <span className="text-2xl">→</span>
+        </button>
+      </div>
+      <Modal open= {open} setOpen ={setOpen} handleClose ={handleClose}/>
+    </div>
+  );
+};
+
+export default IphoneCarousel;
