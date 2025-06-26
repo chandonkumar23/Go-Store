@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-const Modal = ({ open,  handleClose }) => {
-    const [ setShow] = useState(false);
+const Modal = ({ open, setOpen,handlClose }) => {
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         if (open) {
@@ -21,7 +21,7 @@ const Modal = ({ open,  handleClose }) => {
 
                     <div>
                         <div className='flex justify-end'>
-                            <CloseIcon onClick={handleClose} />
+                            <CloseIcon onClick ={handlClose} />
                         </div>
                         <iframe width="760" height="415" src="https://www.youtube.com/embed/GDlkCkcIqTs?si=coYE2M93cxyo6Zl4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
