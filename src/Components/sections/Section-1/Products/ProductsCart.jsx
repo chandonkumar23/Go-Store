@@ -99,8 +99,13 @@ const ProductCard = ({ product }) => {
 
                         {/* Left - Image */}
                         <div className="md:w-1/2 w-full flex items-center justify-center p-4 bg-gray-50">
-                            <img src={image} alt={title} className="max-h-80 object-contain" />
+                            <img
+                                src={image}
+                                alt={title}
+                                className="max-h-80 object-contain transition-transform duration-500 transform hover:scale-110"
+                            />
                         </div>
+
 
                         {/* Right - Details */}
                         <div className="md:w-1/2 w-full p-6 flex flex-col justify-between items-start text-left">
