@@ -182,6 +182,36 @@ const products = [
         image: "https://i.ibb.co/HWVytHH/00e5b3691719571bb5999119bd18c61e.jpg",
         rating: 4,
     },
+    {
+        id: 19,
+        title: "Short Chino Denim Short",
+        category: "Electronics",
+        price: 47.6,
+        oldPrice: 49.99,
+        tag: "SALE",
+        image: "https://i.ibb.co/HWVytHH/00e5b3691719571bb5999119bd18c61e.jpg",
+        rating: 4,
+    },
+    {
+        id: 20,
+        title: "Short Chino Denim Short",
+        category: "Electronics",
+        price: 47.6,
+        oldPrice: 49.99,
+        tag: "SALE",
+        image: "https://i.ibb.co/HWVytHH/00e5b3691719571bb5999119bd18c61e.jpg",
+        rating: 4,
+    },
+    {
+        id: 21,
+        title: "Short Chino Denim Short",
+        category: "Electronics",
+        price: 47.6,
+        oldPrice: 49.99,
+        tag: "SALE",
+        image: "https://i.ibb.co/HWVytHH/00e5b3691719571bb5999119bd18c61e.jpg",
+        rating: 4,
+    },
     // Add more...
 ];
 
@@ -191,7 +221,7 @@ const FeaturedTabs = () => {
     const filteredProducts = products.filter(p => p.category === activeTab);
 
     return (
-        <div className="text-center">
+        <div className="text-center mb-10">
             <h2 className="text-4xl font-bold mb-10">Featured Products</h2>
 
             <div className="flex justify-center gap-3 mb-8">
