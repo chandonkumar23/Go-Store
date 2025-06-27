@@ -5,6 +5,7 @@ import SectionOne from "../../Components/sections/Section-1/SectionOne";
 import SaleSection from "../../Components/sections/Section-1/SectionThree";
 import SectionTow from "../../Components/sections/Section-1/SectionTow";
 import FeaturedTabs from './../../Components/sections/Section-1/Products/Products';
+import ProductCarousel from './../../Components/sections/Section-1/Products/ProductCaro';
 
 const Main = () => {
     return (
@@ -16,6 +17,7 @@ const Main = () => {
             <SectionTow/>
             <FeaturedTabs />
             <SaleSection/>
+            <ProductCarousel/>
            
         </div>
     );

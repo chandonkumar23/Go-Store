@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 const SaleSection = () => {
     const [timer, setTimer] = useState({ days: 99, hours: 22, minutes: 56, seconds: 41 });
 
@@ -28,11 +29,11 @@ const SaleSection = () => {
 
     return (
         <div className="bg-white mb-20  ">
-            <div className="flex gap-10 items-center">
+            <div className="flex gap-10 ">
                 <div>
                     <img className="w-[900px] h-[600px]" src="https://i.ibb.co/mrTbZxT6/banner-deal.jpg" alt="saller model" />
                 </div>
-                <div>
+                <div className="top-20">
                     <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white px-6 py-3 rounded-lg text-sm font-semibold mb-5">
                         LIMITED OFFER
                     </button>
@@ -58,6 +59,7 @@ const SaleSection = () => {
                 </div>
 
             </div>
+
         </div>
     );
 };
