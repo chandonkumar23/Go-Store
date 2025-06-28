@@ -10,7 +10,7 @@ const Navbar = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
-    <div>
+     <div>
       <div className='p-4'>
         <div className="flex justify-between items-center">
           <div>

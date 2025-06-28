@@ -11,12 +11,13 @@ import TestimonialSection from "../../Components/sections/Section-1/Review";
 import NewsletterSection from "../../Components/sections/Section-1/NewsLatter";
 import Sub from "../../Components/Footer/Sub";
 import Footer from "../../Components/Footer/Footer";
+import ResponsiveNavbar from "../../Components/Navbar/Navbar";
 
 const Main = () => {
     return (
         <div>
             <SubTop/>
-            <Navbar></Navbar>
+            <Navbar/>
             <Banner></Banner>
             <SectionOne/>
             <SectionTow/>
