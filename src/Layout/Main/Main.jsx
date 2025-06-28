@@ -9,6 +9,8 @@ import ProductCarousel from './../../Components/sections/Section-1/Products/Prod
 import StatisticsSection from "../../Components/sections/Section-1/SectinFour";
 import TestimonialSection from "../../Components/sections/Section-1/Review";
 import NewsletterSection from "../../Components/sections/Section-1/NewsLatter";
+import Sub from "../../Components/Footer/Sub";
+import Footer from "../../Components/Footer/Footer";
 
 const Main = () => {
     return (
@@ -22,8 +24,10 @@ const Main = () => {
             <SaleSection/>
             <ProductCarousel/>
             <StatisticsSection/>
-            <TestimonialSection/>
-            <NewsletterSection/>
+             <TestimonialSection/>
+            <NewsletterSection/> 
+            <Sub/>
+            <Footer/>
            
         </div>
     );

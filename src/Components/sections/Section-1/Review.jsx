@@ -75,11 +75,11 @@ const TestimonialCard = ({ testimonial, direction = 'left' }) => {
 
 const TestimonialSection = () => {
   return (
-    <section className="relative bg-[#f3f6fb] py-20 px-4 overflow-hidden">
+   <section className="relative z-10 bg-[#f3f6fb] py-20 px-4 h-[1000px]"> 
       {/* Decorative Shapes */}
-      <div className="absolute bottom-0 left-24 w-24 h-24 bg-gradient-to-br from-pink-400 to-orange-300 rounded-xl "></div>
-      <div className="absolute top-20 right-36 w-24 h-24 bg-gradient-to-br from-pink-400 to-orange-300 rounded-xl "></div>
-      <div className="absolute bottom-8 right-20 w-28 h-28 bg-gradient-to-br from-pink-400 to-orange-300 rounded-bl-[50%] rounded-tr-[50%]"></div>
+      <div className="absolute top-40 left-24 w-24 h-24 bg-gradient-to-br from-pink-400 to-orange-300 rounded-xl "></div>
+      <div className="absolute  right-36 w-24 h-24 bg-gradient-to-br from-pink-400 to-orange-300 rounded-xl "></div>
+      <div className="absolute top-1.5 right-20 w-24 h-24 bg-gradient-to-br from-pink-400 to-orange-300 rounded-xl "></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-14 text-black">
