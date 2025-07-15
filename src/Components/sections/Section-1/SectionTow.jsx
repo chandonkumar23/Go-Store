@@ -17,7 +17,7 @@ const SectionTow = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 mb-40">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 sm:px-6 lg:px-16 py-8 mb-20">
       {banners.map((banner, index) => {
         const isEven = index % 2 === 0;
 
@@ -28,30 +28,32 @@ const SectionTow = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
-            className={`group rounded-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between p-6 ${banner.bgColor}`}
+            className={`group rounded-2xl overflow-hidden flex flex-col lg:flex-row items-center justify-between p-6 sm:p-8 ${banner.bgColor}`}
           >
-            <div className="max-w-md">
+            {/* Left Content */}
+            <div className="text-center lg:text-left max-w-lg">
               <div className="mb-2">
                 <span className="text-white text-sm font-medium px-3 py-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400">
                   On Sale This Week
                 </span>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                 {banner.text}
               </h2>
               <a
                 href="#"
-                className="text-black font-medium flex items-center gap-1 hover:underline"
+                className="text-black font-medium inline-flex items-center gap-1 hover:underline"
               >
                 Shop Now <span>&rarr;</span>
               </a>
             </div>
 
-            <div className="mt-4 md:mt-0">
+            {/* Right Image */}
+            <div className="mt-6 lg:mt-0">
               <motion.img
                 src={banner.image}
                 alt="Banner"
-                className="w-full max-w-[350px] h-[350px] md:max-w-sm object-cover rounded-xl"
+                className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[350px] h-auto object-contain rounded-xl"
                 whileHover={{ y: -10 }}
                 transition={{ type: "spring", stiffness: 200 }}
               />
@@ -60,7 +62,6 @@ const SectionTow = () => {
         );
       })}
     </div>
-
   );
 };
 

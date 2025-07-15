@@ -51,67 +51,75 @@ const StatisticsSection = () => {
   }, []);
 
   return (
-    <section id="stats-section" className="p-6 bg-white overflow-hidden">
-      <div className="grid lg:grid-cols-2 gap-10 items-start">
-        {/* LEFT CONTENT */}
-        <div
-          className={`transition-all duration-1000 ease-out transform ${
-            isVisible ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"
-          }`}
-        >
-          <span className="inline-block bg-gradient-to-r from-pink-500 to-orange-400 text-white px-4 py-3 text-sm font-semibold rounded-md mb-4">
-            OUR STATISTICS
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-            Professional Service & Care <br /> In A Pleasant Ambience
-          </h2>
-          <p className="text-gray-600 text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam...
-          </p>
+   <section id="stats-section" className="bg-white py-10 px-4 sm:px-6 lg:px-12 overflow-hidden">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+    
+    {/* LEFT CONTENT */}
+    <div
+      className={`transition-all duration-1000 ease-out transform ${
+        isVisible ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"
+      }`}
+    >
+      <span className="inline-block bg-gradient-to-r from-pink-500 to-orange-400 text-white px-4 py-2 text-sm font-semibold rounded-md mb-4">
+        OUR STATISTICS
+      </span>
 
-          {/* STATS */}
-          <div className="mt-10 bg-gradient-to-r from-orange-500 to-pink-500 rounded-md p-6 md:p-10 flex flex-col md:flex-row justify-between text-white text-center gap-6">
-            <div>
-              <h3 className="text-4xl font-bold">{happyCustomers}</h3>
-              <p className="mt-1 text-lg">Happy Customers</p>
-            </div>
-            <div className="border-t md:border-t-0 md:border-l md:border-r border-white md:mx-6 py-4 md:py-0"></div>
-            <div>
-              <h3 className="text-4xl font-bold">{productsSold}</h3>
-              <p className="mt-1 text-lg">Products Sold</p>
-            </div>
-            <div className="border-t md:border-t-0 md:border-l md:border-r border-white md:mx-6 py-4 md:py-0"></div>
-            <div>
-              <h3 className="text-4xl font-bold">{yearsExp}</h3>
-              <p className="mt-1 text-lg">Years Experience</p>
-            </div>
-          </div>
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight mb-4">
+        Professional Service & Care <br /> In A Pleasant Ambience
+      </h2>
+
+      <p className="text-gray-600 text-base sm:text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
+        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+        volutpat. Ut wisi enim ad minim veniam...
+      </p>
+
+      {/* STATS */}
+      <div className="mt-10 bg-gradient-to-r from-orange-500 to-pink-500 rounded-md p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row flex-wrap justify-between text-white text-center gap-6">
+        <div className="flex-1 min-w-[120px]">
+          <h3 className="text-3xl sm:text-4xl font-bold">{happyCustomers}</h3>
+          <p className="mt-1 text-base sm:text-lg">Happy Customers</p>
         </div>
 
-        {/* RIGHT CONTENT */}
-        <div
-          className={`grid grid-cols-2 gap-6 h-full transition-all duration-1000 ease-out transform ${
-            isVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
-          }`}
-        >
-          {[
-            "https://i.ibb.co/hxNNVXQN/service-4.jpg",
-            "https://i.ibb.co/mVffQvpR/service-3.jpg",
-            "https://i.ibb.co/J1z91NF/service-2.jpg",
-            "https://i.ibb.co/YF8h6NkK/service-1.jpg",
-          ].map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={`img${index + 1}`}
-              className="rounded-xl object-cover w-full h-64 md:h-80 transform transition-transform duration-300 hover:-translate-y-2 shadow-md"
-            />
-          ))}
+        <div className="hidden sm:block border-l border-white mx-3"></div>
+
+        <div className="flex-1 min-w-[120px]">
+          <h3 className="text-3xl sm:text-4xl font-bold">{productsSold}</h3>
+          <p className="mt-1 text-base sm:text-lg">Products Sold</p>
+        </div>
+
+        <div className="hidden sm:block border-l border-white mx-3"></div>
+
+        <div className="flex-1 min-w-[120px]">
+          <h3 className="text-3xl sm:text-4xl font-bold">{yearsExp}</h3>
+          <p className="mt-1 text-base sm:text-lg">Years Experience</p>
         </div>
       </div>
-    </section>
+    </div>
+
+    {/* RIGHT CONTENT */}
+    <div
+      className={`grid grid-cols-2 gap-4 sm:gap-6 transition-all duration-1000 ease-out transform ${
+        isVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
+      }`}
+    >
+      {[
+        "https://i.ibb.co/hxNNVXQN/service-4.jpg",
+        "https://i.ibb.co/mVffQvpR/service-3.jpg",
+        "https://i.ibb.co/J1z91NF/service-2.jpg",
+        "https://i.ibb.co/YF8h6NkK/service-1.jpg",
+      ].map((src, index) => (
+        <img
+          key={index}
+          src={src}
+          alt={`img${index + 1}`}
+          className="rounded-xl object-cover w-full h-48 sm:h-64 md:h-72 lg:h-80 transition-transform duration-300 hover:-translate-y-2 shadow-md"
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
   );
 };
 
